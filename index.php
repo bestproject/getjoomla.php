@@ -291,7 +291,7 @@ class Installer
 	public function checkRequirements(){
 		
 		// Check if PHP can get remote contect
-		if( !ini_get('allow_url_fopen') OR !function_exists('curl_init') ) {
+		if( !ini_get('allow_url_fopen') && !function_exists('curl_init') ) {
 			throw new Exception('This class require <b>CURL</b> or <b>allow_url_fopen</b> have to be enabled in PHP configuration.', 502);
 		}
 
